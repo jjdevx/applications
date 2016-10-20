@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 class HomeController extends Controller
 {
     public function index()
-    {
-        return view('home/index');
+    { 
+    	$label['data']='main';
+        return view('home/index',array('label'=>$label));
     }
 
     public function minor()

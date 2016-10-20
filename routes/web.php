@@ -13,3 +13,4 @@
 
 Route::get('/', 'HomeController@index')->name("main");
 Route::get('/minor', 'HomeController@minor')->name("minor");
+ROUTE::get('/product', 'ProductController@index');

@@ -6,15 +6,15 @@
     <title>INSPINIA - <?php echo $__env->yieldContent('title'); ?> </title>
 
 
-    <link rel="stylesheet" href="css/vendor.css" />
-    <link rel="stylesheet" href="css/app.css" />
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo e(asset('css/vendor.css')); ?>" />
+    <link rel="stylesheet" href="<?php echo e(asset('css/app.css')); ?>" />
+    <link href="<?php echo e(asset('css/bootstrap.min.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('font-awesome/css/font-awesome.css')); ?>" rel="stylesheet">
 
-    <link href="css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+    <link href="<?php echo e(asset('css/plugins/dataTables/datatables.min.css')); ?>" rel="stylesheet">
 
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="<?php echo e(asset('css/animate.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('css/style.css')); ?>" rel="stylesheet">
 
 </head>
 <body>
@@ -43,24 +43,22 @@
     </div>
     <!-- End wrapper-->
 
-<script src="js/app.js" type="text/javascript"></script>
+<script src="<?php echo e(asset('js/app.js')); ?>" type="text/javascript"></script>
 
 <?php $__env->startSection('scripts'); ?>
 <!-- Mainly scripts -->
-<script src="js/jquery-2.1.1.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-
-<script src="js/plugins/dataTables/datatables.min.js"></script>
+<script src="<?php echo e(asset('js/jquery-2.1.1.js')); ?>"></script>
+<script src="<?php echo e(asset('js/bootstrap.min.js')); ?>"></script>
+<script src="<?php echo e(asset('js/plugins/metisMenu/jquery.metisMenu.js')); ?>"></script>
+<script src="<?php echo e(asset('js/plugins/slimscroll/jquery.slimscroll.min.js')); ?>"></script>
+<script src="<?php echo e(asset('js/plugins/dataTables/datatables.min.js')); ?>"></script>
+<!-- Custom and plugin javascript -->
+<script src="<?php echo e(asset('js/inspinia.js')); ?>"></script>
+<script src="<?php echo e(asset('js/plugins/pace/pace.min.js')); ?>"></script> 
 
 <!-- Custom and plugin javascript -->
-<script src="js/inspinia.js"></script>
-<script src="js/plugins/pace/pace.min.js"></script> 
-
-<!-- Custom and plugin javascript -->
-<script src="js/inspinia.js"></script>
-<script src="js/plugins/pace/pace.min.js"></script>
+<script src="<?php echo e(asset('js/inspinia.js')); ?>"></script>
+<script src="<?php echo e(asset('js/plugins/pace/pace.min.js')); ?>"></script>
 
 <!-- Page-Level Scripts -->
 <script>
