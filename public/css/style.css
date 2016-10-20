@@ -8389,3 +8389,18 @@ body.md-skin {
     margin: 0;
   }
 }
+/*Custom css by Mr.vitou*/
+.action-table-datas{
+  width:100%;
+  text-align: center;
+}
+.action-table-datas > span{
+  float: left;
+  width: 50%;
+}
+.action-table-datas > span > a{
+  color: white; 
+}
+.action-table-datas > span.label:first-child > a{
+  color:#000;
+}
