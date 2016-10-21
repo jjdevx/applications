@@ -26,7 +26,7 @@
         <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="costum-add">
-                <a href="{{URL::to('product')}}"><button style="font-weight:bold;color:white;float: left; position: relative;top: 10px;  right: -10px;z-index:9;" class="btn btn-primary btn-sm" type="button">New</button></a> </div>
+                <a href="<?php echo e(URL::to('product')); ?>"><button style="font-weight:bold;color:white;float: left; position: relative;top: 10px;  right: -10px;z-index:9;" class="btn btn-primary btn-sm" type="button">New</button></a> </div>
             <div class="ibox-title">
                 
                 <h5>Basic Data Tables example with responsive plugin</h5>
