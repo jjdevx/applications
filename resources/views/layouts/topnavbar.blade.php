@@ -9,7 +9,7 @@
             </form>
         </div>
         <ul class="nav navbar-top-links navbar-right">
-            <li> 
+            <li>
                 <a href="{{ url('/logout') }}"
                     onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();">

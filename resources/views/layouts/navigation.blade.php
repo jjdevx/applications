@@ -24,7 +24,7 @@
                 <div class="logo-element">
                     IN+
                 </div>
-            </li>
+            </li> 
             <li class="{{ isActiveRoute('admin') }}">
                 <a href="{{ url('/admin') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Main view</span></a>
             </li>

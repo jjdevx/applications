@@ -2,6 +2,7 @@
     .ibox-title h5 {
         text-indent: 20px;
     }
+<<<<<<< HEAD
 </style> 
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-10">
@@ -15,6 +16,21 @@
             </li>
             <li class="active">
                 <strong><?php echo e(strtoupper($breadcrumb['action'])); ?></strong>
+=======
+</style>
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Data Tables</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a>Tables</a>
+            </li>
+            <li class="active">
+                <strong>Data Tables</strong>
+>>>>>>> 2a3c368d0071c71161387ebf457f96f7553e26e5
             </li>
         </ol>
     </div>
@@ -26,7 +42,11 @@
         <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="costum-add">
+<<<<<<< HEAD
                 <a href="<?php echo e(URL::to('addpro')); ?>"><button style="font-weight:bold;color:white;float: left; position: relative;top: 10px;  right: -10px;z-index:9;" class="btn btn-primary btn-sm" type="button">New</button></a> </div>
+=======
+                <a href="<?php echo e(URL::to('product')); ?>"><button style="font-weight:bold;color:white;float: left; position: relative;top: 10px;  right: -10px;z-index:9;" class="btn btn-primary btn-sm" type="button">New</button></a> </div>
+>>>>>>> 2a3c368d0071c71161387ebf457f96f7553e26e5
             <div class="ibox-title">
                 
                 <h5>Basic Data Tables example with responsive plugin</h5>
@@ -71,7 +91,11 @@
                 <td>Win 95+</td>
                 <td class="center">4</td>
                 <td class="center">X</td>
+<<<<<<< HEAD
                 <td class="center"><div class="action-table-datas"><span class="label"><a href="#">Edit</a></span><span class="label label-danger"><a href="#" class="prodel">Delete</a></span></div></td>
+=======
+                <td class="center"><div class="action-table-datas"><span class="label"><a href="#">Edit</a></span><span class="label label-danger"><a href="#">Delete</a></span></div></td>
+>>>>>>> 2a3c368d0071c71161387ebf457f96f7553e26e5
             </tr> 
             </tbody>
             <tfoot>

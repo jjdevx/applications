@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-10">
         <h2><?php echo e(strtoupper($breadcrumb['title'])); ?></h2>
@@ -16,6 +17,8 @@
     <div class="col-lg-2"> 
     </div>
 </div>
+=======
+>>>>>>> 2a3c368d0071c71161387ebf457f96f7553e26e5
 <div class="wrapper wrapper-content">
 <div class="row">
     <div class="col-lg-3">

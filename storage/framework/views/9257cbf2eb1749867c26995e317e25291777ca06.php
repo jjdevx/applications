@@ -9,6 +9,7 @@
             </form>
         </div>
         <ul class="nav navbar-top-links navbar-right">
+<<<<<<< HEAD
             <li> 
                 <a href="<?php echo e(url('/logout')); ?>"
                     onclick="event.preventDefault();
@@ -20,6 +21,12 @@
                     <?php echo e(csrf_field()); ?>
 
                 </form>
+=======
+            <li>
+                <a href="#">
+                    <i class="fa fa-sign-out"></i> Log out
+                </a>
+>>>>>>> 2a3c368d0071c71161387ebf457f96f7553e26e5
             </li>
         </ul>
     </nav>

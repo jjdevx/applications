@@ -7,12 +7,18 @@
 <!-- Custom and plugin javascript -->
 <!-- <script src="<?php echo e(asset('js/inspinia.js')); ?>"></script> -->
 <script src="<?php echo e(asset('js/plugins/pace/pace.min.js')); ?>"></script> 
+<<<<<<< HEAD
 <!-- Sweet alert -->
 <script src="<?php echo e(asset('js/plugins/sweetalert/sweetalert.min.js')); ?>"></script>
 <script src="<?php echo e(asset('js/plugins/iCheck/icheck.min.js')); ?>"></script>
 <!-- Page-Level Scripts -->
 <script>
 $(document).ready(function(){ 
+=======
+<!-- Page-Level Scripts -->
+<script>
+$(document).ready(function(){
+>>>>>>> 2a3c368d0071c71161387ebf457f96f7553e26e5
     $('.dataTables-example').DataTable({
         pageLength: 25,
         responsive: true,
@@ -35,6 +41,7 @@ $(document).ready(function(){
             }
         ] 
     }); 
+<<<<<<< HEAD
 });
 $('.prodel').click(function () {  
     swal({
@@ -59,3 +66,7 @@ $('.prodel').click(function () {
         });
     });
 </script>
+=======
+}); 
+</script> 
+>>>>>>> 2a3c368d0071c71161387ebf457f96f7553e26e5

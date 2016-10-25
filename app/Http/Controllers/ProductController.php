@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 class ProductController extends Controller
-{
+{ 
 	public function __construct()
 	{
 			$this->middleware('auth');
