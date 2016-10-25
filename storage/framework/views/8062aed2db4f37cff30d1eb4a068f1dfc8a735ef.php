@@ -7,9 +7,12 @@
 <!-- Custom and plugin javascript -->
 <!-- <script src="<?php echo e(asset('js/inspinia.js')); ?>"></script> -->
 <script src="<?php echo e(asset('js/plugins/pace/pace.min.js')); ?>"></script> 
+<!-- Sweet alert -->
+<script src="<?php echo e(asset('js/plugins/sweetalert/sweetalert.min.js')); ?>"></script>
+<script src="<?php echo e(asset('js/plugins/iCheck/icheck.min.js')); ?>"></script>
 <!-- Page-Level Scripts -->
 <script>
-$(document).ready(function(){
+$(document).ready(function(){ 
     $('.dataTables-example').DataTable({
         pageLength: 25,
         responsive: true,
@@ -32,5 +35,27 @@ $(document).ready(function(){
             }
         ] 
     }); 
-}); 
-</script> 
+});
+$('.prodel').click(function () {  
+    swal({
+        title: "Are you sure?",
+        text: "You will not be able to recover this imaginary file!",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Yes, delete it!",
+        closeOnConfirm: false
+    }, function () {
+        swal("Deleted!", "Your imaginary file has been deleted.", "success");
+    });
+});
+</script>
+<!-- iCheck -->
+<script>
+    $(document).ready(function () {
+        $('.i-checks').iCheck({
+            checkboxClass: 'icheckbox_square-green',
+            radioClass: 'iradio_square-green',
+        });
+    });
+</script>

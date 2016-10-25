@@ -12,9 +12,12 @@
     <link href="{{asset('font-awesome/css/font-awesome.css')}}" rel="stylesheet">
 
     <link href="{{asset('css/plugins/dataTables/datatables.min.css')}}" rel="stylesheet">
-
+    <!-- Sweet Alert -->
+    <link href="{{asset('css/plugins/sweetalert/sweetalert.css')}}" rel="stylesheet">
     <link href="{{asset('css/animate.css')}}" rel="stylesheet">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css')}}" rel="stylesheet">
+    <link href="{{asset('css/plugins/iCheck/custom.css')}}" rel="stylesheet">
 
 </head>
 <body> 
@@ -43,7 +46,7 @@
     <!-- End wrapper-->
 
 <script src="{{asset('js/app.js')}}" type="text/javascript"></script> 
-    @if(isset($label)&& $label=='product')
+    @if(isset($label) && $label=='product' || isset($label) && $label=='addpro')
         @include('layouts.pro-scripts')
     @else 
         @include('layouts.home-scripts')

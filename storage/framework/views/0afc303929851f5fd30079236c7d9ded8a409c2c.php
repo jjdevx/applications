@@ -12,13 +12,15 @@
     <link href="<?php echo e(asset('font-awesome/css/font-awesome.css')); ?>" rel="stylesheet">
 
     <link href="<?php echo e(asset('css/plugins/dataTables/datatables.min.css')); ?>" rel="stylesheet">
-
+    <!-- Sweet Alert -->
+    <link href="<?php echo e(asset('css/plugins/sweetalert/sweetalert.css')); ?>" rel="stylesheet">
     <link href="<?php echo e(asset('css/animate.css')); ?>" rel="stylesheet">
     <link href="<?php echo e(asset('css/style.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('css/plugins/iCheck/custom.css')); ?>" rel="stylesheet">
 
 </head>
-<body>
-
+<body> 
   <!-- Wrapper-->
     <div id="wrapper">
 
@@ -43,54 +45,11 @@
     </div>
     <!-- End wrapper-->
 
-<script src="<?php echo e(asset('js/app.js')); ?>" type="text/javascript"></script>
-
-<?php $__env->startSection('scripts'); ?>
-<!-- Mainly scripts -->
-<script src="<?php echo e(asset('js/jquery-2.1.1.js')); ?>"></script>
-<script src="<?php echo e(asset('js/bootstrap.min.js')); ?>"></script>
-<script src="<?php echo e(asset('js/plugins/metisMenu/jquery.metisMenu.js')); ?>"></script>
-<script src="<?php echo e(asset('js/plugins/slimscroll/jquery.slimscroll.min.js')); ?>"></script>
-<script src="<?php echo e(asset('js/plugins/dataTables/datatables.min.js')); ?>"></script>
-<!-- Custom and plugin javascript -->
-<script src="<?php echo e(asset('js/inspinia.js')); ?>"></script>
-<script src="<?php echo e(asset('js/plugins/pace/pace.min.js')); ?>"></script> 
-
-<!-- Custom and plugin javascript -->
-<script src="<?php echo e(asset('js/inspinia.js')); ?>"></script>
-<script src="<?php echo e(asset('js/plugins/pace/pace.min.js')); ?>"></script>
-
-<!-- Page-Level Scripts -->
-<script>
-    $(document).ready(function(){
-        $('.dataTables-example').DataTable({
-            pageLength: 25,
-            responsive: true,
-            dom: '<"html5buttons"B>lTfgitp',
-            buttons: [
-                { extend: 'copy'},
-                {extend: 'csv'},
-                {extend: 'excel', title: 'ExampleFile'},
-                {extend: 'pdf', title: 'ExampleFile'},
-
-                {extend: 'print',
-                 customize: function (win){
-                        $(win.document.body).addClass('white-bg');
-                        $(win.document.body).css('font-size', '10px');
-
-                        $(win.document.body).find('table')
-                                .addClass('compact')
-                                .css('font-size', 'inherit');
-                }
-                }
-            ]
-
-        });
-
-    });
-
-</script>
-<?php echo $__env->yieldSection(); ?>
-
+<script src="<?php echo e(asset('js/app.js')); ?>" type="text/javascript"></script> 
+    <?php if(isset($label) && $label=='product' || isset($label) && $label=='addpro'): ?>
+        <?php echo $__env->make('layouts.pro-scripts', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php else: ?> 
+        <?php echo $__env->make('layouts.home-scripts', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php endif; ?>
 </body>
 </html>
