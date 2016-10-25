@@ -41,11 +41,7 @@
 <script src="<?php echo e(asset('js/demo/sparkline-demo.js')); ?>"></script>
 <!-- Page-Level Scripts -->
 <script>
-<<<<<<< HEAD
     $(document).ready(function(){ 
-=======
-    $(document).ready(function(){
->>>>>>> 2a3c368d0071c71161387ebf457f96f7553e26e5
         $('.dataTables-example').DataTable({
             pageLength: 25,
             responsive: true,

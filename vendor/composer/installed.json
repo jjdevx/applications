@@ -3550,8 +3550,7 @@
             "s3",
             "sftp",
             "storage"
-        ]
-<<<<<<< HEAD
+        ] 
     },
     {
         "name": "phpunit/phpunit",
@@ -3636,7 +3635,5 @@
             "testing",
             "xunit"
         ]
-=======
->>>>>>> 2a3c368d0071c71161387ebf457f96f7553e26e5
     }
 ]
