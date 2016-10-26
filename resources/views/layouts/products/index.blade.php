@@ -26,7 +26,8 @@
         <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="costum-add">
-                <a href="{{URL::to('addpro')}}"><button style="font-weight:bold;color:white;float: left; position: relative;top: 10px;  right: -10px;z-index:9;" class="btn btn-primary btn-sm" type="button">New</button></a> </div>
+                <a href="{{URL::to('addpro')}}"><button style="font-weight:bold;color:white;float: left; position: relative;top: 10px;  right: -10px;z-index:9;" class="btn btn-primary btn-sm" type="button">New</button></a>
+            </div>
             <div class="ibox-title">
 
                 <h5>Basic Data Tables example with responsive plugin</h5>
@@ -54,40 +55,33 @@
             <table class="table table-striped table-bordered table-hover dataTables-example" >
             <thead>
             <tr>
-                <th>Name</th>
-                <th>Image</th>
-                <th>Type</th>
-                <th>Paws</th> 
-                <th>Price</th>
-                <th>Start</th>
-                <th>End</th>
-                <th>Date-expired</th>
+                <th>Rendering engine</th>
+                <th>Browser</th>
+                <th>Platform(s)</th>
+                <th>Engine version</th>
+                <th>CSS grade</th>
                 <th>actions</th>
             </tr>
             </thead>
             <tbody>
             <tr class="gradeX">
-                <td>iphone 6</td>
-                <td>image</td>
-                <td>apple</td>
-                <td>$20</td>
-                <td>vitou</td>
-                <td class="center">Date start</td>
-                <td class="center">Date end</td>
-                <td class="center">Date-expired</td>
+                <td>Trident</td>
+                <td>Internet
+                    Explorer 4.0
+                </td>
+                <td>Win 95+</td>
+                <td class="center">4</td>
+                <td class="center">X</td>
                 <td class="center"><div class="action-table-datas"><span class="label"><a href="#">Edit</a></span><span class="label label-danger"><a href="#" class="prodel">Delete</a></span></div></td>
             </tr>
             </tbody>
             <tfoot>
             <tr>
-                <th>Name</th>
-                <th>Image</th>
-                <th>Type</th>
-                <th>Paws</th> 
-                <th>Price</th>
-                <th>Start</th>
-                <th>End</th>
-                <th>Date-expired</th>
+                <th>Rendering engine</th>
+                <th>Browser</th>
+                <th>Platform(s)</th>
+                <th>Engine version</th>
+                <th>CSS grade</th>
                 <th>actions</th>
             </tr>
             </tfoot>

@@ -2,7 +2,7 @@
 
 <?php $__env->startSection('content'); ?>
     <?php if(isset($label)&& $label['data']=='product'): ?>
-        <?php echo View("layouts.products.index")->with('breadcrumb',$breadcrumb); ?>
+        <?php echo View("layouts.products.index2")->with('breadcrumb',$breadcrumb); ?>
 
    <?php elseif(isset($label)&& $label['data']=='addpro'): ?>
         <?php echo View("layouts.products.add")->with('breadcrumb',$breadcrumb); ?>

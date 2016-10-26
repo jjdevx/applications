@@ -4,7 +4,7 @@
 
 @section('content')
     @if(isset($label)&& $label['data']=='product')
-        {!!View("layouts.products.index")->with('breadcrumb',$breadcrumb)!!}
+        {!!View("layouts.products.index2")->with('breadcrumb',$breadcrumb)!!}
    @elseif(isset($label)&& $label['data']=='addpro')
         {!!View("layouts.products.add")->with('breadcrumb',$breadcrumb)!!}
     @else
