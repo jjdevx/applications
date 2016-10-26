@@ -2,7 +2,7 @@
     .ibox-title h5 {
         text-indent: 20px;
     }
-</style> 
+</style>
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-10">
         <h2>{{strtoupper($breadcrumb['title'])}}</h2>
@@ -18,17 +18,17 @@
             </li>
         </ol>
     </div>
-    <div class="col-lg-2"> 
+    <div class="col-lg-2">
     </div>
 </div>
- <div class="wrapper wrapper-content animated fadeInRight"> 
+ <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
         <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="costum-add">
                 <a href="{{URL::to('addpro')}}"><button style="font-weight:bold;color:white;float: left; position: relative;top: 10px;  right: -10px;z-index:9;" class="btn btn-primary btn-sm" type="button">New</button></a> </div>
             <div class="ibox-title">
-                
+
                 <h5>Basic Data Tables example with responsive plugin</h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
@@ -72,7 +72,7 @@
                 <td class="center">4</td>
                 <td class="center">X</td>
                 <td class="center"><div class="action-table-datas"><span class="label"><a href="#">Edit</a></span><span class="label label-danger"><a href="#" class="prodel">Delete</a></span></div></td>
-            </tr> 
+            </tr>
             </tbody>
             <tfoot>
             <tr>
@@ -91,4 +91,4 @@
         </div>
     </div>
     </div>
-</div> 
+</div>
