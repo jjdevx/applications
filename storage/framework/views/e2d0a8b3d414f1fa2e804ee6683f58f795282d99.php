@@ -6,13 +6,27 @@
 <script src="<?php echo e(asset('js/plugins/dataTables/datatables.min.js')); ?>"></script>
 <!-- Custom and plugin javascript -->
 <!-- <script src="<?php echo e(asset('js/inspinia.js')); ?>"></script> -->
-<script src="<?php echo e(asset('js/plugins/pace/pace.min.js')); ?>"></script> 
+<script src="<?php echo e(asset('js/plugins/pace/pace.min.js')); ?>"></script>
 <!-- Sweet alert -->
 <script src="<?php echo e(asset('js/plugins/sweetalert/sweetalert.min.js')); ?>"></script>
 <script src="<?php echo e(asset('js/plugins/iCheck/icheck.min.js')); ?>"></script>
+<!-- slick carousel-->
+<script src="<?php echo e(asset('js/plugins/slick/slick.min.js')); ?>"></script> 
+
+<script>
+    $(document).ready(function(){
+
+
+        $('.product-images').slick({
+            dots: true
+        });
+
+    });
+
+</script>
 <!-- Page-Level Scripts -->
 <script>
-$(document).ready(function(){ 
+$(document).ready(function(){
     $('.dataTables-example').DataTable({
         pageLength: 25,
         responsive: true,
@@ -33,10 +47,10 @@ $(document).ready(function(){
                             .css('font-size', 'inherit');
             }
             }
-        ] 
-    }); 
+        ]
+    });
 });
-$('.prodel').click(function () {  
+$('.prodel').click(function () {
     swal({
         title: "Are you sure?",
         text: "You will not be able to recover this imaginary file!",

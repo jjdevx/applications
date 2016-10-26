@@ -7,6 +7,12 @@
    <?php elseif(isset($label)&& $label['data']=='addpro'): ?>
         <?php echo View("layouts.products.add")->with('breadcrumb',$breadcrumb); ?>
 
+   <?php elseif(isset($label)&& $label['data']=='detailpro'): ?>
+       <?php echo View("layouts.products.detail")->with('breadcrumb',$breadcrumb); ?>
+
+   <?php elseif(isset($label)&& $label['data']=='editpro'): ?>
+       <?php echo View("layouts.products.edit")->with('breadcrumb',$breadcrumb); ?>
+
     <?php else: ?>
         <?php echo View("layouts.main")->with('breadcrumb',$breadcrumb); ?>
 

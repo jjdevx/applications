@@ -12,6 +12,10 @@
     <link href="<?php echo e(asset('font-awesome/css/font-awesome.css')); ?>" rel="stylesheet">
     <!-- Toastr style -->
     <link href="<?php echo e(asset('css/plugins/toastr/toastr.min.css')); ?>" rel="stylesheet">
+    <!-- detail -->
+    <link href="<?php echo e(asset('css/plugins/slick/slick.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('css/plugins/slick/slick-theme.css')); ?>" rel="stylesheet">
+
     <link href="<?php echo e(asset('css/plugins/dataTables/datatables.min.css')); ?>" rel="stylesheet">
     <!-- Sweet Alert -->
     <link href="<?php echo e(asset('css/plugins/sweetalert/sweetalert.css')); ?>" rel="stylesheet">
@@ -47,7 +51,7 @@
     <!-- End wrapper-->
 
 <script src="<?php echo e(asset('js/app.js')); ?>" type="text/javascript"></script>
-    <?php if(isset($label) && $label=='product' || isset($label) && $label=='addpro'): ?>
+    <?php if(isset($label) && $label=='product' || isset($label) && $label=='addpro' || isset($label) && $label=='detailpro'): ?>
         <?php echo $__env->make('layouts.pro-scripts', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <?php else: ?>
         <?php echo $__env->make('layouts.home-scripts', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

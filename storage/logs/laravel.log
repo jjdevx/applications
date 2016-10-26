@@ -340,3 +340,6 @@ Stack trace:
 #49 /var/www/html/applications/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
 #50 /var/www/html/applications/public/index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #51 {main}  
+[2016-10-26 08:49:29] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot redeclare App\Http\Controllers\ProductController::add()' in /var/www/html/applications/app/Http/Controllers/ProductController.php:25
+Stack trace:
+#0 {main}  

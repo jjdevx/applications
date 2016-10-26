@@ -14,6 +14,8 @@ Route::get('/', 'HomeController@index')->name("admin");
 Route::get('/admin', 'AdminController@index')->name("admin");
 ROUTE::get('/product', 'ProductController@index')->name("product");
 ROUTE::get('/addpro', 'ProductController@add')->name("product");
+ROUTE::get('/detail', 'ProductController@detail')->name("product");
+ROUTE::get('/edit', 'ProductController@edit')->name("product");
 
 Auth::routes();
 

@@ -12,6 +12,10 @@
     <link href="{{asset('font-awesome/css/font-awesome.css')}}" rel="stylesheet">
     <!-- Toastr style -->
     <link href="{{asset('css/plugins/toastr/toastr.min.css')}}" rel="stylesheet">
+    <!-- detail -->
+    <link href="{{asset('css/plugins/slick/slick.css')}}" rel="stylesheet">
+    <link href="{{asset('css/plugins/slick/slick-theme.css')}}" rel="stylesheet">
+
     <link href="{{asset('css/plugins/dataTables/datatables.min.css')}}" rel="stylesheet">
     <!-- Sweet Alert -->
     <link href="{{asset('css/plugins/sweetalert/sweetalert.css')}}" rel="stylesheet">
@@ -47,7 +51,7 @@
     <!-- End wrapper-->
 
 <script src="{{asset('js/app.js')}}" type="text/javascript"></script>
-    @if(isset($label) && $label=='product' || isset($label) && $label=='addpro')
+    @if(isset($label) && $label=='product' || isset($label) && $label=='addpro' || isset($label) && $label=='detailpro')
         @include('layouts.pro-scripts')
     @else
         @include('layouts.home-scripts')

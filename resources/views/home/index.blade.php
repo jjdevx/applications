@@ -7,6 +7,10 @@
         {!!View("layouts.products.index2")->with('breadcrumb',$breadcrumb)!!}
    @elseif(isset($label)&& $label['data']=='addpro')
         {!!View("layouts.products.add")->with('breadcrumb',$breadcrumb)!!}
+   @elseif(isset($label)&& $label['data']=='detailpro')
+       {!!View("layouts.products.detail")->with('breadcrumb',$breadcrumb)!!}
+   @elseif(isset($label)&& $label['data']=='editpro')
+       {!!View("layouts.products.edit")->with('breadcrumb',$breadcrumb)!!}
     @else
         {!!View("layouts.main")->with('breadcrumb',$breadcrumb)!!}
     @endif
