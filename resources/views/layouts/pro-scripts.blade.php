@@ -11,7 +11,7 @@
 <script src="{{asset('js/plugins/sweetalert/sweetalert.min.js')}}"></script>
 <script src="{{asset('js/plugins/iCheck/icheck.min.js')}}"></script>
 <!-- slick carousel-->
-<script src="{{asset('js/plugins/slick/slick.min.js')}}"></script> 
+<script src="{{asset('js/plugins/slick/slick.min.js')}}"></script>
 
 <script>
     $(document).ready(function(){
@@ -63,13 +63,4 @@ $('.prodel').click(function () {
         swal("Deleted!", "Your imaginary file has been deleted.", "success");
     });
 });
-</script>
-<!-- iCheck -->
-<script>
-    $(document).ready(function () {
-        $('.i-checks').iCheck({
-            checkboxClass: 'icheckbox_square-green',
-            radioClass: 'iradio_square-green',
-        });
-    });
 </script>

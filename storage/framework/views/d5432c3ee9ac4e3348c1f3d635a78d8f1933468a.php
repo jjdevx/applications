@@ -50,7 +50,7 @@
     </div>
     <!-- End wrapper-->
 
-<script src="<?php echo e(asset('js/app.js')); ?>" type="text/javascript"></script>
+<!-- <script src="<?php echo e(asset('js/app.js')); ?>" type="text/javascript"></script> -->
     <?php if(isset($label) && $label=='product' || isset($label) && $label=='addpro' || isset($label) && $label=='detailpro'): ?>
         <?php echo $__env->make('layouts.pro-scripts', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <?php else: ?>

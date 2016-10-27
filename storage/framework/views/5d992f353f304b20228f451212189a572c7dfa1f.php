@@ -6,7 +6,7 @@
 <script src="<?php echo e(asset('js/plugins/dataTables/datatables.min.js')); ?>"></script>
 <!-- Custom and plugin javascript -->
 <script src="<?php echo e(asset('js/inspinia.js')); ?>"></script>
-<script src="<?php echo e(asset('js/plugins/pace/pace.min.js')); ?>"></script>  
+<script src="<?php echo e(asset('js/plugins/pace/pace.min.js')); ?>"></script>
 <!-- Flot -->
 <script src="<?php echo e(asset('js/plugins/flot/jquery.flot.js')); ?>"></script>
 <script src="<?php echo e(asset('js/plugins/flot/jquery.flot.tooltip.min.js')); ?>"></script>
@@ -41,7 +41,7 @@
 <script src="<?php echo e(asset('js/demo/sparkline-demo.js')); ?>"></script>
 <!-- Page-Level Scripts -->
 <script>
-    $(document).ready(function(){ 
+    $(document).ready(function(){
         $('.dataTables-example').DataTable({
             pageLength: 25,
             responsive: true,
