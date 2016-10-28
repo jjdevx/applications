@@ -9,11 +9,9 @@
 
 <script src="<?php echo e(asset('js/plugins/pace/pace.min.js')); ?>"></script>
 <!-- Sweet alert -->
-<script src="<?php echo e(asset('js/plugins/sweetalert/sweetalert.min.js')); ?>"></script>
+<script src="<?php echo e(asset('js/plugins/sweetalert/sweetalert.min.js')); ?>"></script> 
 <!-- slick carousel-->
 <script src="<?php echo e(asset('js/plugins/slick/slick.min.js')); ?>"></script>
-<!-- iCheck -->
-<script src="<?php echo e(asset('js/plugins/iCheck/icheck.min.js')); ?>"></script>
 <!-- Page-Level Scripts -->
 <script>
 $(document).ready(function(){

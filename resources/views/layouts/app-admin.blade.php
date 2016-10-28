@@ -50,7 +50,7 @@
     </div>
     <!-- End wrapper-->
 
-<script src="{{asset('js/app.js')}}" type="text/javascript"></script>
+<!-- <script src="{{asset('js/app.js')}}" type="text/javascript"></script> -->
     @if(isset($label) && $label=='product' || isset($label) && $label=='addpro' || isset($label) && $label=='detailpro')
         @include('layouts.pro-scripts')
     @else
