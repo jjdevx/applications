@@ -45,7 +45,7 @@
 
                           <a href="<?php echo e(URL::to('detail')); ?>" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
                           <a href="<?php echo e(URL::to('edit')); ?>" class="btn btn-xs btn-outline btn-primary">Edit <i class="fa fa-long-arrow-right"></i> </a>
-                            <a href="<?php echo e(URL::to('detail')); ?>" class="btn btn-xs btn-outline label label-danger">Deleted <i class="fa fa-long-arrow-right"></i> </a>
+                            <a href="#" class="btn btn-xs btn-outline label label-danger prodel">Deleted <i class="fa fa-long-arrow-right"></i> </a>
                         </div>
                     </div>
                 </div>
