@@ -25,7 +25,7 @@
                 <div class="logo-element">
                     IN+
                 </div>
-            </li> 
+            </li>
             <li class="<?php echo e(isActiveRoute('admin')); ?>">
                 <a href="<?php echo e(url('/admin')); ?>"><i class="fa fa-th-large"></i> <span class="nav-label">Main view</span></a>
             </li>
