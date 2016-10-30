@@ -22,10 +22,16 @@
     <!-- Sweet Alert -->
     <link href="{{asset('css/plugins/sweetalert/sweetalert.css')}}" rel="stylesheet">
     <link href="{{asset('css/animate.css')}}" rel="stylesheet">
-    
+    <link href="{{asset('css/plugins/dropzone/basic.css')}}" rel="stylesheet">
+    <link href="{{asset('css/plugins/dropzone/dropzone.css')}}" rel="stylesheet">
+    <link href="{{asset('css/plugins/jasny/jasny-bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/plugins/codemirror/codemirror.css')}}" rel="stylesheet">
+    <link href="{{asset('css/plugins/summernote/summernote.css')}}" rel="stylesheet">
+    <link href="{{asset('css/plugins/summernote/summernote-bs3.css')}}" rel="stylesheet">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <link href="{{asset('css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css')}}" rel="stylesheet">
-
+    <!-- Ladda style -->
+    <link href="{{asset('css/plugins/ladda/ladda-themeless.min.css')}}" rel="stylesheet">
 
 </head>
 <body>

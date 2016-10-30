@@ -22,10 +22,16 @@
     <!-- Sweet Alert -->
     <link href="<?php echo e(asset('css/plugins/sweetalert/sweetalert.css')); ?>" rel="stylesheet">
     <link href="<?php echo e(asset('css/animate.css')); ?>" rel="stylesheet">
-    
+    <link href="<?php echo e(asset('css/plugins/dropzone/basic.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('css/plugins/dropzone/dropzone.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('css/plugins/jasny/jasny-bootstrap.min.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('css/plugins/codemirror/codemirror.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('css/plugins/summernote/summernote.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('css/plugins/summernote/summernote-bs3.css')); ?>" rel="stylesheet">
     <link href="<?php echo e(asset('css/style.css')); ?>" rel="stylesheet">
     <link href="<?php echo e(asset('css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css')); ?>" rel="stylesheet">
-
+    <!-- Ladda style -->
+    <link href="<?php echo e(asset('css/plugins/ladda/ladda-themeless.min.css')); ?>" rel="stylesheet">
 
 </head>
 <body>
