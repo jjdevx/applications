@@ -1,4 +1,5 @@
 {!!View("layouts.breadcrumb")->with('breadcrumb',$breadcrumb)!!}
+
 <div class="wrapper wrapper-content animated fadeInRight ecommerce">
 
     <div class="row">

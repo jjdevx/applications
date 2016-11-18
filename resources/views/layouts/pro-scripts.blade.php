@@ -26,7 +26,8 @@
 <!-- Ladda -->
 <script src="{{asset('js/plugins/ladda/spin.min.js')}}"></script>
 <script src="{{asset('js/plugins/ladda/ladda.min.js')}}"></script>
-<script src="{{asset('js/plugins/ladda/ladda.jquery.min.js')}}"></script> 
+<script src="{{asset('js/plugins/ladda/ladda.jquery.min.js')}}"></script>
+<script src="{{asset('js/custom.js')}}"></script>   
 <!-- Page-Level Scripts -->
 <script>
 $(document).ready(function(){

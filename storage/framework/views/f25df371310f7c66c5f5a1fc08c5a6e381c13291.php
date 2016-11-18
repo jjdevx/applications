@@ -5,7 +5,7 @@
         <?php echo View("layouts.products.index2")->with('breadcrumb',$breadcrumb); ?>
 
    <?php elseif(isset($label)&& $label['data']=='addpro'): ?>
-        <?php echo View("layouts.products.add")->with('breadcrumb',$breadcrumb); ?>
+        <?php echo View("layouts.products.add")->with('breadcrumb',$breadcrumb)->with('datas',$datas); ?>
 
    <?php elseif(isset($label)&& $label['data']=='detailpro'): ?>
        <?php echo View("layouts.products.detail")->with('breadcrumb',$breadcrumb); ?>
