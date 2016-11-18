@@ -24,7 +24,9 @@
                 </div>
             </div>
             <div class="ibox-content">
-                <form method="get" class="form-horizontal" id='form'>
+                <form method="post" class="form-horizontal" id='form'>
+                  <?php echo csrf_field(); ?>
+
                     <div class="hr-line-dashed"></div>
                     <div class="form-group"><label class="col-sm-2 control-label">Person's name</label>
                         <div class="col-sm-10"><input name="txtPname" type="text" placeholder="Person's name" class="form-control"></div>
@@ -40,16 +42,28 @@
                     <div class="form-group">
                     <label class="col-sm-2 control-label">Type</label>
                     <div class="col-sm-10">
-                      <select name="txtType" data-placeholder="Choose a Type..." class="chosen-select" multiple style="width:350px;" tabindex="4">
+                      <select id="txtType" name="txtType" data-placeholder="Choose a Type..." class="chosen-select" multiple style="width:350px;" tabindex="4">
                           <option value="">Select</option>
-                          <option value="United States">phone</option>
-                          <option value="United Kingdom">motor</option>
+                          <?php $__currentLoopData = $datas['parrents']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $result): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
+                            <option value="<?php echo e($result->id); ?>"><?php echo e(ucfirst($result->name)); ?></option>
+                          <?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
                       </select>
                     </div>
                     </div>
-                    <div class="form-group"><label class="col-sm-2 control-label">Model</label>
-                        <div class="col-sm-10"><input type="text" name="txtModel" placeholder="Model" class="form-control"></div>
+                    <div class="form-group">
+                    <label class="col-sm-2 control-label">Model</label>
+                    <div class="col-sm-10">
+                      <select id="txtModel" name="txtModel" data-placeholder="Choose a Model..." class="chosen-select" multiple style="width:350px;" tabindex="4">
+                          <option value="">Select</option>
+                          <?php $__currentLoopData = $datas['parrents']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $result): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
+                            <option value="<?php echo e($result->id); ?>"><?php echo e(ucfirst($result->name)); ?></option>
+                          <?php endforeach; $__env->popLoop(); $loop = $__env->getFirstLoop(); ?>
+                      </select>
                     </div>
+                    </div>
+                    <!-- <div class="form-group"><label class="col-sm-2 control-label">Model</label>
+                        <div class="col-sm-10"><input type="text" name="txtModel" placeholder="Model" class="form-control"></div>
+                    </div> -->
                     <div class="form-group">
                       <label class="col-sm-2 control-label">Set price</label>
                       <div class="col-sm-10"><input name="txtSetPrice" type="text" placeholder="Enter price" class="form-control"></div>
@@ -75,7 +89,7 @@
                         <label class="col-sm-2 control-label">Start</label>
                         <div class="col-sm-10">
                             <div class="input-group date">
-                              <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" name="txtStart" value="03/04/2014">
+                              <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" name="txtStart" value="">
                             </div>
                         </div>
                     </div>
@@ -83,7 +97,7 @@
                         <label class="col-sm-2 control-label">End</label>
                         <div class="col-sm-10">
                             <div class="input-group date">
-                              <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" name="txtEnd" value="03/04/2014">
+                              <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" name="txtEnd" value="">
                             </div>
                         </div>
                     </div>
