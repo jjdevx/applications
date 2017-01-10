@@ -31,6 +31,9 @@
             <li class="{{ isActiveRoute('product') }}">
                 <a href="{{ url('/product') }}"><i class="fa fa-th-list"></i> <span class="nav-label">Products view</span></a>
             </li>
+            <li class="{{ isActiveRoute('category') }}">
+                <a href="{{ url('/category') }}"><i class="fa fa-th-list"></i> <span class="nav-label">Categories view</span></a>
+            </li>
         </ul>
 
     </div>

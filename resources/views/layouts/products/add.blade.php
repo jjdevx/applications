@@ -50,13 +50,10 @@
                     </div>
                     <div class="form-group">
                     <label class="col-sm-2 control-label">Model</label>
-                    <div class="col-sm-10">
-                      <select id="txtModel" name="txtModel" data-placeholder="Choose a Model..." class="chosen-select" multiple style="width:350px;" tabindex="4">
-                          <option value="">Select</option>
-                          @foreach($datas['parrents'] as $result)
-                            <option value="{{$result->id}}">{{ucfirst($result->name)}}</option>
-                          @endforeach
-                      </select>
+                    <div class="col-sm-10" id="myModel"> 
+                        <select class="form-control m-b" name="txtModel" id="txtModel">
+                          <option value="0">Select</option> 
+                        </select>
                     </div>
                     </div>
                     <!-- <div class="form-group"><label class="col-sm-2 control-label">Model</label>

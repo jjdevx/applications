@@ -153,7 +153,7 @@ $(document).ready(function(){
 });
 
 </script>
-<script>
+<!-- <script>
     Dropzone.options.dropzoneForm = {
         paramName: "file", // The name that will be used to transfer the file
         maxFilesize: 2, // MB
@@ -178,4 +178,4 @@ $(document).ready(function(){
         });
 
    });
-</script>
+</script> -->
