@@ -23,20 +23,28 @@
                 </div>
             </div>
             <div class="ibox-content">
-                <form method="post" class="form-horizontal" id='form'>
+                <form enctype="multipart/form-data" accept-charset="UTF-8" method="post" class="form-horizontal" id='form' action="{{URL::to('addpro')}}" onsubmit="return postForm()">
                   {!! csrf_field() !!}
                     <div class="hr-line-dashed"></div>
                     <div class="form-group"><label class="col-sm-2 control-label">Person's name</label>
-                        <div class="col-sm-10"><input name="txtPname" type="text" placeholder="Person's name" class="form-control"></div>
+                        <!-- <div class="col-sm-10"><input name="txtPname" type="text" placeholder="Person's name" class="form-control"></div> -->  
+                        <div class="col-sm-10"> 
+                            <select class="form-control m-b" name="txtPname" id="txtPname">
+                              <option value="0">Select</option> 
+                              @foreach($datas['users'] as $result)
+                                <option value="{{$result->id}}">{{ucfirst($result->name)}}</option>
+                              @endforeach 
+                            </select>
+                        </div> 
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                       <label class="col-sm-2 control-label">Phone</label>
                       <div class="col-sm-10"><input name="txtPhone" type="text" placeholder="Enter phone" class="form-control" ></div>
-                    </div>
-                    <div class="form-group">
+                    </div> -->
+                    <!-- <div class="form-group">
                       <label class="col-sm-2 control-label">Email</label>
                       <div class="col-sm-10"><input name="txtEmail" type="email" placeholder="Enter email" class="form-control" required></div>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                     <label class="col-sm-2 control-label">Type</label>
                     <div class="col-sm-10">
@@ -74,7 +82,7 @@
                           <span class="input-group-addon btn btn-default btn-file">
                               <span class="fileinput-new">Select file</span>
                               <span class="fileinput-exists">Change</span>
-                              <input type="file" name="..."/>
+                              <input type="file" name="proImg[]"/>
                           </span>
                           <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
                       </div></div>
@@ -99,8 +107,9 @@
                     <div class="form-group">
                       <label class="col-sm-12">Descritions</label>
                     <div class="col-sm-12">
-                      <div class="summernote">
-                          <h3>Lorem Ipsum is simply</h3>
+                      <input type="hidden" id="txaDescriptions" name="txaDescriptions">
+                      <div class="summernote"> 
+                            <h3>Lorem Ipsum is simply</h3>
                           dummy text of the printing and typesetting industry. <strong>Lorem Ipsum has been the industry's</strong> standard dummy text ever since the 1500s,
                           when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
                           typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
@@ -110,7 +119,7 @@
                               <li>Remaining essentially unchanged</li>
                               <li>Make a type specimen book</li>
                               <li>Unknown printer</li>
-                          </ul>
+                          </ul> 
                       </div>
                       </div>
                     </div>
@@ -118,7 +127,7 @@
                     <div class="form-group">
                         <div class="col-sm-4 col-sm-offset-2">
                             <button class="btn btn-white" type="submit">Cancel</button>
-                            <button class="ladda-button btn btn-primary"  data-style="expand-left">Submit</button>
+                            <button type="submit" name="btnSubmit" class="ladda-button btn btn-primary"  data-style="expand-left">Submit</button>
                             <!-- <button class="btn btn-primary" type="submit">Save changes</button> -->
                         </div>
                     </div>
@@ -127,3 +136,12 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+  var postForm = function() {
+    /*get all tag html*/
+    // var content = $('.note-editable[contenteditable="true"]').html();
+    // get only text 
+    var content = $('.note-editable[contenteditable="true"]').text();
+    $("#txaDescriptions").val(content);   
+  }
+</script>

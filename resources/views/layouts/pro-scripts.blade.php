@@ -1,5 +1,5 @@
 <!-- Mainly scripts -->
-<script src="{{asset('js/jquery-2.1.1.js')}}"></script>
+<script src="{{asset('js/jquery.min.js')}}"></script> 
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 <!-- Custom and plugin javascript -->
 <script src="{{asset('js/inspinia.js')}}"></script>
@@ -33,6 +33,7 @@
 $(document).ready(function(){
   // Editor
   $('.summernote').summernote();
+  
   // validate
     $("#form").validate({
         rules: {
@@ -71,7 +72,8 @@ $(document).ready(function(){
         keyboardNavigation: false,
         forceParse: false,
         calendarWeeks: true,
-        autoclose: true
+        autoclose: true,
+        format: 'yyyy-m-d',
     });
     $('.dataTables-example').DataTable({
         pageLength: 25,
@@ -153,29 +155,3 @@ $(document).ready(function(){
 });
 
 </script>
-<!-- <script>
-    Dropzone.options.dropzoneForm = {
-        paramName: "file", // The name that will be used to transfer the file
-        maxFilesize: 2, // MB
-        dictDefaultMessage: "<strong>Drop files here or click to upload. </strong></br> (This is just a demo dropzone. Selected files are not actually uploaded.)"
-    };
-
-    $(document).ready(function(){
-
-        var editor_one = CodeMirror.fromTextArea(document.getElementById("code1"), {
-            lineNumbers: true,
-            matchBrackets: true
-        });
-
-        var editor_two = CodeMirror.fromTextArea(document.getElementById("code2"), {
-            lineNumbers: true,
-            matchBrackets: true
-        });
-
-        var editor_two = CodeMirror.fromTextArea(document.getElementById("code3"), {
-            lineNumbers: true,
-            matchBrackets: true
-        });
-
-   });
-</script> -->

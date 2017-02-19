@@ -8410,3 +8410,56 @@ body.md-skin {
   text-indent:10px;
   padding: 15px 0 0px;
 }
+/*custome css*/
+.product-imitation{
+  height: 240px;
+  overflow: hidden;
+  padding: 0 !important;
+  position: relative;
+}
+.product-imitation > img{
+  max-width: 100%;
+  position: relative; 
+  overflow: hidden;
+}
+.cus-div{
+  width: 100%;
+  background-color:rgba(-89, -57, -72, 0.5);
+  z-index: 9999;
+  position: absolute;
+  color: white;
+}
+.s-div{
+  width: 50%;
+  float: left;
+  text-align: center;
+  color: #333;
+}
+.price{
+  color: red;
+  background: none;
+}
+.cus-div-bottom{
+  width: 100%;
+  background: #fff; 
+  z-index: 9999;
+  position: absolute;
+  color: white;
+  bottom: 0;
+  border-bottom: 1px solid #dbdbdb;
+  padding: 5px 0;
+}
+.exp_pro,.contact_cat{
+  width: 100%;
+}
+.product-name{
+  width: 50%;
+  float: left;
+}
+.exp{
+  color: red !important;
+}
+.contact_cat > small{
+  width: 50%;
+  float: left;
+}

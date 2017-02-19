@@ -61,8 +61,8 @@
 
     <!-- <script src="{{asset('js/app.js')}}" type="text/javascript"></script> -->
 
-    @if(isset($label) && $label=='product' || isset($label) && $label=='addpro' || isset($label) && $label=='detailpro')
-        @include('layouts.pro-scripts')
+    @if( (isset($label) && $label=='product') || (isset($label) && $label=='addpro') || (isset($label) && $label=='detailpro') || (isset($label) && $label=='editpro')) 
+        @include('layouts.pro-scripts',array('label'=>$label))
     @else
         @include('layouts.home-scripts')
     @endif
