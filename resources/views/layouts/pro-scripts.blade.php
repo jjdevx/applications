@@ -10,6 +10,7 @@
 <script src="{{asset('js/plugins/dataTables/datatables.min.js')}}"></script>
 <!-- Data picker -->
 <script src="{{asset('js/plugins/datapicker/bootstrap-datepicker.js')}}"></script>
+<script src="{{asset('js/bootstrap-datetimepicker.min.js')}}"></script>
 <!-- Sweet alert -->
 <script src="{{asset('js/plugins/sweetalert/sweetalert.min.js')}}"></script>
 <!-- slick carousel-->
@@ -73,7 +74,19 @@ $(document).ready(function(){
         forceParse: false,
         calendarWeeks: true,
         autoclose: true,
-        format: 'yyyy-m-d',
+        format: 'yyyy-m-d', 
+    }); 
+    $('.form_datetime').datetimepicker({
+        //language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        forceParse: 0,
+        pickerPosition: "bottom-left",
+        showMeridian: 1,
+        format: 'yyyy-mm-dd hh:ii:ss'
     });
     $('.dataTables-example').DataTable({
         pageLength: 25,

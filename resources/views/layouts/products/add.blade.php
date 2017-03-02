@@ -48,12 +48,18 @@
                     <div class="form-group">
                     <label class="col-sm-2 control-label">Type</label>
                     <div class="col-sm-10">
-                      <select id="txtType" name="txtType" data-placeholder="Choose a Type..." class="chosen-select" multiple style="width:350px;" tabindex="4">
+                      <!-- <select id="txtType" name="txtType" data-placeholder="Choose a Type..." class="chosen-select" multiple style="width:350px;" tabindex="4">
                           <option value="">Select</option>
                           @foreach($datas['parrents'] as $result)
                             <option value="{{$result->id}}">{{ucfirst($result->name)}}</option>
                           @endforeach
-                      </select>
+                      </select> -->
+                      <select class="form-control" id="txtType" name="txtType" >
+                              <option value="">Select</option>
+                              @foreach($datas['parrents'] as $result) 
+                               <option value="{{$result->id}}">{{ucfirst($result->name)}}</option>
+                              @endforeach 
+                          </select>
                     </div>
                     </div>
                     <div class="form-group">
@@ -88,7 +94,7 @@
                       </div></div>
                     </div>
 
-                    <div class="form-group" id="data_1">
+                    <!-- <div class="form-group" id="data_1">
                         <label class="col-sm-2 control-label">Start</label>
                         <div class="col-sm-10">
                             <div class="input-group date">
@@ -103,6 +109,26 @@
                               <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" name="txtEnd" value="">
                             </div>
                         </div>
+                    </div> -->
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">Start</label>
+                        <div class=" col-sm-10">
+                            <div class="input-group date form_datetime"  >
+                            <input class="form-control" size="16" type="text" name="txtStart" value="">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                        </div>
+                        </div> 
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">End</label>
+                        <div class=" col-sm-10">
+                            <div class="input-group date form_datetime"  >
+                            <input class="form-control" size="16" type="text" name="txtEnd" value="">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                        </div>
+                        </div> 
                     </div>
                     <div class="form-group">
                       <label class="col-sm-12">Descritions</label>

@@ -19,6 +19,7 @@ ROUTE::get('/detail/{id}', 'ProductController@detail')->name("product");
 ROUTE::get('proedit/{id}', 'ProductController@edit')->name("product");
 // ROUTE::post('/edit/{id}', 'ProductController@edit')->name("product");
 ROUTE::post('/getChild', 'ProductController@getchild')->name("product"); 
+ROUTE::post('/proedit/getChild', 'ProductController@getchild')->name("product"); 
 ROUTE::post('/proedit/FindasObjectsNoParam', 'ProductController@FindasObjectsNoParam')->name("product");
 ROUTE::post('/updatepro/{id}', 'ProductController@update')->name("product");
 Auth::routes(); 

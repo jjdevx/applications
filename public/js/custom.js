@@ -9,6 +9,7 @@ $(document).ready(function(){
             $('#txtModel').empty();
           },
           success: function(data){
+            console.log(data);
             if (data.length > 0){
               $('#txtModel').append(' <option value="0">Select</option>');
               $.each(data,function(inx,val){ 

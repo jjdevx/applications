@@ -49,6 +49,7 @@
                                     }
                                 ?>
                             @endforeach 
+                            
                             <div class="contact_cat">
                                 <small class="text-muted">
                                 {{ucfirst($cat_parent)}}
@@ -57,6 +58,22 @@
                                 {{'Tell : '.$values->phone}}
                                 </small>
                             </div> 
+                            <div class="contact_cat">
+                                <small class="text-muted">
+                                Start date
+                                </small>
+                                <small class="text-muted">
+                                {{$values->start_date}}
+                                </small>
+                            </div>
+                            <div class="contact_cat">
+                                <small class="text-muted">
+                                End date
+                                </small>
+                                <small class="text-muted">
+                                {{$values->end_date}}
+                                </small>
+                            </div>
                             <div class="exp_pro">
                                 <a href="#" class="product-name" <?php echo isset($exp) && !empty($exp)?'':'style="width:100% !important;"'?>>
                                 {{ucfirst($cat_child)}}
@@ -67,8 +84,7 @@
                                 </a>
                                 @endif 
                                 
-                            </div> 
-                           
+                            </div>  
                             <div class="small m-t-xs"> 
                                 {{strlen($values->decriptions)>500?substr($values->decriptions,0,500).'...':$values->decriptions}}
                             </div>

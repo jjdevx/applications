@@ -19,8 +19,7 @@ class ProductController extends Controller
 			$this->middleware('auth');
 	}
 	function getchild(Request $Request){
-		$datas=DB::table('categories')->whereIn('pid',$Request->get('pid'))->get();
-		// $datas['childs']=Category::all()->whereIn('pid',explode(',',$Request->get('pid')));
+		$datas=DB::table('categories')->where('pid','=',$Request->get('pid'))->get();  
 		echo json_encode($datas);
 	} 
 	function FindasObjectsNoParam(Request $Request){ 
@@ -83,7 +82,7 @@ INNER JOIN galleries ON galleries.id=products.img_id');
 				'cid'=>$Request->get('txtModel'),
 				'decriptions'=>trim($Request->get('txaDescriptions')),
 				'start_date'=>$Request->get('txtStart').' '.date("H:m:s"), 
-				'end_date'=>$Request->get('txtStart').' '.date("H:m:s"), 
+				'end_date'=>$Request->get('txtEnd').' '.date("H:m:s"), 
 				'created_at'=>date("Y-m-d H:m:s")
 			));
 			return Redirect('product');
@@ -98,21 +97,33 @@ INNER JOIN galleries ON galleries.id=products.img_id');
 		$label['data']='detailpro';
 		return view('home.index',array('label'=>$label,'breadcrumb'=>$breadcrumb));
 	}
-	function edit($id){
-		$datas=array();
+	function edit($id){ 
+		$datas['parrents']=Category::all()->where('pid', '=', 0);
 		$datas['customusers']=$this->FindasObjects(array(),'customusers'); 
-		$datas['categories']=$this->FindasObjects(array(),'categories'); 
+		// $datas['categories']=$this->FindasObjects(array(),'categories'); 
+		$datas['categories']=Category::all()->where('pid', '>', 0);
 
 		$datas['product'] =  DB::table('products')
 		->join('customusers', 'products.customer_id', '=', 'customusers.id') 
 		->join('galleries', 'galleries.id', '=', 'products.img_id')
-		->select('galleries.name as gname','products.cid as pc_id','customusers.id as cus_id', 'customusers.name as cus_name', 'customusers.phone','customusers.email','customusers.address','customusers.descriptions as cus_des','products.id as pro_id','products.price','products.decriptions as pro_des','products.interest','products.img_id')
+		->select('galleries.id as gid','galleries.name as gname','products.cid as pc_id','products.pid','customusers.id as cus_id', 'customusers.name as cus_name', 'customusers.phone','customusers.email','customusers.address','customusers.descriptions as cus_des','products.id as pro_id','products.price','products.decriptions as pro_des','products.interest','products.img_id','products.start_date','products.end_date')
 		->where('products.id','=',$id)->first(); 
 		$breadcrumb=array('title'=>'Product update dashboard','home'=>'home','type'=>'form','action'=>'product update');
 		$label['data']='editpro';
 		return view('home.index',array('label'=>$label,'breadcrumb'=>$breadcrumb,'datas'=>$datas));
 	}
-	function update($id,Request $Request){ 
-		
+	function update($id,Request $Request){  
+		$product = Product::findOrFail($id);
+		$product->customer_id=$Request->get('cus_name');
+		$product->pid=$Request->get('txtType');
+		$product->cid=$Request->get('txtModel');
+		$product->price=$Request->get('txtPrice');
+		$product->interest=$Request->get('txtInterest');
+		$product->img_id=$Request->get('img_id');
+		$product->start_date=$Request->get('txtStart');
+		$product->end_date=$Request->get('txtEnd');
+		$product->updated_at=date("Y-m-d H:i:s");
+		$product->save();  
+		return Redirect('product');
 	}
 }

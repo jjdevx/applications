@@ -18,6 +18,7 @@
     <link href="{{asset('css/plugins/slick/slick.css')}}" rel="stylesheet">
     <link href="{{asset('css/plugins/slick/slick-theme.css')}}" rel="stylesheet">
     <link href="{{asset('css/plugins/datapicker/datepicker3.css')}}" rel="stylesheet">
+    <link href="{{asset('css/bootstrap-datetimepicker.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/plugins/dataTables/datatables.min.css')}}" rel="stylesheet">
     <!-- Sweet Alert -->
     <link href="{{asset('css/plugins/sweetalert/sweetalert.css')}}" rel="stylesheet">
