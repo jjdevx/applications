@@ -3,9 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INSPINIA - @yield('title') </title>
-
-
+    <title>INSPINIA - @yield('title') </title> 
     <link rel="stylesheet" href="{{asset('css/vendor.css')}}" />
     <link rel="stylesheet" href="{{asset('css/app.css')}}" />
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
@@ -31,11 +29,11 @@
     <link href="{{asset('css/plugins/summernote/summernote-bs3.css')}}" rel="stylesheet">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <link href="{{asset('css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css')}}" rel="stylesheet">
-    <!-- Ladda style -->
-    <link href="{{asset('css/plugins/ladda/ladda-themeless.min.css')}}" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+    <link href="{{asset('css/fileinput.css')}}" media="all" rel="stylesheet" type="text/css"/> 
+    <!-- Ladda style --> 
 </head>
-<body>
+<body >
   <!-- Wrapper-->
     <div id="wrapper">
 
@@ -58,11 +56,10 @@
         <!-- End page wrapper-->
 
     </div>
-    <!-- End wrapper-->
-
+    <!-- End wrapper--> 
     <!-- <script src="{{asset('js/app.js')}}" type="text/javascript"></script> -->
 
-    @if( (isset($label) && $label=='product') || (isset($label) && $label=='addpro') || (isset($label) && $label=='detailpro') || (isset($label) && $label=='editpro')) 
+    @if( (isset($label) && $label=='product') || (isset($label) && $label=='addpro') || (isset($label) && $label=='detailpro') || (isset($label) && $label=='editpro' ) || $label=='user' || $label=='edituser' || $label=='useradd')  
         @include('layouts.pro-scripts',array('label'=>$label))
     @else
         @include('layouts.home-scripts')

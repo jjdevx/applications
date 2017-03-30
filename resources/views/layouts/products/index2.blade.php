@@ -3,6 +3,7 @@
     <a href="{{URL::to('addpro')}}"><button class="btn btn-primary btn-sm" type="button">New</button></a>
 </div>
 <div class="wrapper wrapper-content animated fadeInRight">
+{!! csrf_field() !!}
     <div class="row"> 
         @foreach($datas['customers'] as $values)
             <div class="col-md-3">
@@ -92,7 +93,7 @@
 
                               <a href="{{ action('ProductController@detail',['id'=>$values->id])}}" data-val="" class="btn btn-xs btn-outline btn-primary" id="detailpro">Info <i class="fa fa-long-arrow-right"></i> </a>
                               <a href="{{ action('ProductController@edit',['id'=>$values->id])}}" data-val="" class="btn btn-xs btn-outline btn-primary" id="editpro">Edit <i class="fa fa-long-arrow-right"></i> </a>
-                                <a href="#" class="btn btn-xs btn-outline label label-danger prodel">Deleted <i class="fa fa-long-arrow-right"></i> </a>
+                                <a href="#" class="btn btn-xs btn-outline label label-danger prodel" data-id="{{$values->id}}">Deleted <i class="fa fa-long-arrow-right"></i> </a>
                             </div>
                         </div>
                     </div>

@@ -1,8 +1,10 @@
 <!-- Mainly scripts -->
 <script src="{{asset('js/jquery.min.js')}}"></script> 
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
-<!-- Custom and plugin javascript -->
-<script src="{{asset('js/inspinia.js')}}"></script>
+<!-- Custom and plugin javascript --> 
+@if($label!='detailpro' && $label!='edituser')
+    <script src="{{asset('js/inspinia.js')}}"></script>
+@endif
 <script src="{{asset('js/plugins/pace/pace.min.js')}}"></script>
 <script src="{{asset('js/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
 <!-- Chosen -->
@@ -28,10 +30,48 @@
 <script src="{{asset('js/plugins/ladda/spin.min.js')}}"></script>
 <script src="{{asset('js/plugins/ladda/ladda.min.js')}}"></script>
 <script src="{{asset('js/plugins/ladda/ladda.jquery.min.js')}}"></script>
-<script src="{{asset('js/custom.js')}}"></script>   
+<script src="{{asset('js/custom.js')}}"></script>  
+<Sscript src="{{asset('js/sortable.js')}}" type="text/javascript"></script>
+    <script src="{{asset('js/fileinput.js')}}" type="text/javascript"></script>  
+    <script src="{{asset('js/theme.js')}}" type="text/javascript"></script>
+
 <!-- Page-Level Scripts -->
 <script>
 $(document).ready(function(){
+    // single upload
+    var btnCust = '<button type="button" class="btn btn-default" title="Add picture tags" ' + 
+    'onclick="alert(\'Call your custom code here.\')">' +
+    '<i class="glyphicon glyphicon-tag"></i>' +
+    '</button>'; 
+$("#avatar-2").fileinput({
+    overwriteInitial: true,
+    maxFileSize: 1500,
+    showClose: false,
+    showCaption: false,
+    showBrowse: false,
+    browseOnZoneClick: true,
+    removeLabel: '',
+    removeIcon: '<i class="glyphicon glyphicon-remove"></i>',
+    removeTitle: 'Cancel or reset changes',
+    elErrorContainer: '#kv-avatar-errors-2',
+    msgErrorClass: 'alert alert-block alert-danger',
+    defaultPreviewContent: '<img src="{{asset("img/default_avatar_male.jpg")}}" alt="Your Avatar" style="width:160px"><h6 class="text-muted">Click to select</h6>',
+    layoutTemplates: {main2: '{preview} ' +  btnCust + ' {remove} {browse}'},
+    allowedFileExtensions: ["jpg", "png", "gif"]
+});
+// multi upload
+    $("#input-ficons-3").fileinput({
+    uploadUrl: "/file-upload-batch/2",
+    previewFileIcon: '<i class="fa fa-file"></i>',
+    allowedPreviewTypes: ['image', 'text'], // allow only preview of image & text files
+    previewFileIconSettings: {
+        'docx': '<i class="fa fa-file-word-o text-primary"></i>',
+        'xlsx': '<i class="fa fa-file-excel-o text-success"></i>',
+        'pptx': '<i class="fa fa-file-powerpoint-o text-danger"></i>',
+        'pdf': '<i class="fa fa-file-pdf-o text-danger"></i>',
+        'zip': '<i class="fa fa-file-archive-o text-muted"></i>',
+    }
+});
   // Editor
   $('.summernote').summernote();
   
@@ -119,6 +159,7 @@ $(document).ready(function(){
         dots: true
     });
     $('.prodel').click(function () {
+        var id=$(this).attr('data-id');
         swal({
             title: "Are you sure?",
             text: "You will not be able to recover this imaginary file!",
@@ -128,7 +169,19 @@ $(document).ready(function(){
             confirmButtonText: "Yes, delete it!",
             closeOnConfirm: false
         }, function () {
-            swal("Deleted!", "Your imaginary file has been deleted.", "success");
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('input[name="_token"]').val()
+                },
+                method: "delete",
+                url: "destroy/"+id,
+                data: { name: "John", location: "Boston" },
+                success:function(datas){ 
+                    $('a[data-id="'+id+'"]').parent().parent().parent().parent().parent().remove();
+                    swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                }
+            });
+            
         });
     });
     // Bind normal buttons

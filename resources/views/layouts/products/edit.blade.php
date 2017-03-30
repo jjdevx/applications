@@ -180,3 +180,13 @@
         
     </form>
 </div>
+<script type="text/javascript">
+  var postForm = function() {
+    /*get all tag html*/
+    // var content = $('.note-editable[contenteditable="true"]').html();
+    // get only text 
+    var content = $('.note-editable[contenteditable="true"]').text();
+    console.log(content);
+    $("#txaDescriptions").val(content);   
+  }
+</script>

@@ -1,4 +1,4 @@
-wrapper wrapper-content animated fadeInRight">
+<div class="wrapper wrapper-content animated fadeInRight">
             <div class="row">
                 <div class="col-lg-6">
                 <div class="ibox float-e-margins">

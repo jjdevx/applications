@@ -81,8 +81,8 @@ INNER JOIN galleries ON galleries.id=products.img_id');
 				'pid'=>$Request->get('txtType'),
 				'cid'=>$Request->get('txtModel'),
 				'decriptions'=>trim($Request->get('txaDescriptions')),
-				'start_date'=>$Request->get('txtStart').' '.date("H:m:s"), 
-				'end_date'=>$Request->get('txtEnd').' '.date("H:m:s"), 
+				'start_date'=>$Request->get('txtStart'), 
+				'end_date'=>$Request->get('txtEnd'), 
 				'created_at'=>date("Y-m-d H:m:s")
 			));
 			return Redirect('product');
@@ -94,8 +94,17 @@ INNER JOIN galleries ON galleries.id=products.img_id');
 	}
 	function detail($id){
 		$breadcrumb=array('title'=>'Product detail dashboard','home'=>'home','type'=>'form','action'=>'product detail');
+		$datas['parrents']=Category::all()->where('pid', '=', 0);
+		$datas['customusers']=$this->FindasObjects(array(),'customusers'); 
+		// $datas['categories']=$this->FindasObjects(array(),'categories'); 
+		$datas['categories']=Category::all();
+		$datas['product'] =  DB::table('products')
+		->join('customusers', 'products.customer_id', '=', 'customusers.id') 
+		->join('galleries', 'galleries.id', '=', 'products.img_id')
+		->select('galleries.id as gid','galleries.name as gname','products.cid as pc_id','products.pid','customusers.id as cus_id','customusers.gender', 'customusers.name as cus_name', 'customusers.phone','customusers.email','customusers.address','customusers.descriptions as cus_des','products.id as pro_id','products.price','products.decriptions as pro_des','products.interest','products.img_id','products.start_date','products.end_date')
+		->where('products.id','=',$id)->first();
 		$label['data']='detailpro';
-		return view('home.index',array('label'=>$label,'breadcrumb'=>$breadcrumb));
+		return view('home.index',['label'=>$label,'breadcrumb'=>$breadcrumb,'datas'=>$datas]);
 	}
 	function edit($id){ 
 		$datas['parrents']=Category::all()->where('pid', '=', 0);
@@ -124,6 +133,19 @@ INNER JOIN galleries ON galleries.id=products.img_id');
 		$product->end_date=$Request->get('txtEnd');
 		$product->updated_at=date("Y-m-d H:i:s");
 		$product->save();  
+		$cus_id=$product->customer_id; 
+		$customer = Customuser::findOrFail($cus_id);
+		$customer->phone=$Request->get('txtPhone');
+		$customer->email=$Request->get('txtEmail');
+		$customer->address=$Request->get('txtAddress');
+		$customer->descriptions=trim($Request->get('txaDescriptions'));
+		$customer->save();
+		// $customer->descriptions=$Request->get('txtAddress');
 		return Redirect('product');
+	}
+	public function destroy($id)
+	{ 
+		$product = Product::findOrFail( $id ); 
+		$product->delete();
 	}
 }

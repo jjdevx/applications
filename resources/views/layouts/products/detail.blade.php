@@ -1,4 +1,4 @@
-{!!View("layouts.breadcrumb")->with('breadcrumb',$breadcrumb)!!}
+{!!View("layouts.breadcrumb")->with('breadcrumb',$breadcrumb)!!} 
 <div class="wrapper wrapper-content animated fadeInRight">
 
     <div class="row">
@@ -15,17 +15,17 @@
 
                                 <div>
                                     <div class="image-imitation">
-                                        [IMAGE 1]
+                                        <img style="max-width: 100%;" src="{{asset($datas['product']->gname)}}">
                                     </div>
                                 </div>
                                 <div>
                                     <div class="image-imitation">
-                                        [IMAGE 2]
+                                       <img style="max-width: 100%;" src="{{asset($datas['product']->gname)}}">
                                     </div>
                                 </div>
                                 <div>
                                     <div class="image-imitation">
-                                        [IMAGE 3]
+                                       <img style="max-width: 100%;" src="{{asset($datas['product']->gname)}}">
                                     </div>
                                 </div>
 
@@ -36,34 +36,55 @@
                         <div class="col-md-7">
 
                             <h2 class="font-bold m-b-xs">
-                                Desktop publishing software
+                            @foreach($datas['categories'] as $cat)
+                            {{$cat->id==$datas['product']->gender?$cat->name:''}}
+                            @endforeach
+                               @foreach($datas['customusers']['results'] as $val)
+                               {{$val->id==$datas['product']->cus_id?ucwords($val->lastname).' '.ucwords($val->name):''}}
+                               @endforeach
                             </h2>
-                            <small>Many desktop publishing packages and web page editors now.</small>
+                            <small>{{$datas['product']->cus_des}}</small>
                             <div class="m-t-md">
-                                <h2 class="product-main-price">$406,602 <small class="text-muted">Exclude Tax</small> </h2>
-                            </div>
-                            <hr>
-
-                            <h4>Product description</h4>
-
-                            <div class="small text-muted">
-                                It is a long established fact that a reader will be distracted by the readable
-                                content of a page when looking at its layout. The point of using Lorem Ipsum is
-
-                                <br/>
-                                <br/>
-                                There are many variations of passages of Lorem Ipsum available, but the majority
-                                have suffered alteration in some form, by injected humour, or randomised words
-                                which don't look even slightly believable.
+                                <h2 class="product-main-price">Set in : ${{$datas['product']->price}} </h2>
                             </div>
                             <dl class="small m-t-md">
-                                <dt>Description lists</dt>
-                                <dd>A description list is perfect for defining terms.</dd>
-                                <dt>Euismod</dt>
-                                <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-                                <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-                                <dt>Malesuada porta</dt>
-                                <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+                                <dt>Phone : </dt>
+                                <dd>&nbsp;&nbsp;{{$datas['product']->phone}}</dd>
+                                <dt>Email : </dt>
+                                <dd>&nbsp;&nbsp;{{$datas['product']->email}}</dd>
+                                <dt>Address : </dt>
+                                <dd>&nbsp;&nbsp;{{$datas['product']->address}}</dd>
+                            </dl>
+                            <hr>
+
+                            <h4>Description</h4>
+
+                            <div class="small text-muted">
+                                {{$datas['product']->pro_des}}
+                            </div>
+                            <dl class="small m-t-md">
+                                <?php 
+                                    $exp='';
+                                    $sdate = new DateTime(date('Y-m-d', strtotime($datas['product']->start_date)));
+                                    $cdate = new DateTime(date("Y-m-d H:i:s"));
+                                    $edate = new DateTime(date('Y-m-d', strtotime($datas['product']->end_date)));
+                                    $countdays=$sdate->diff($cdate)->days;
+                                    $totaldays=$sdate->diff($edate)->days;
+                                    $totalprice=$countdays * $datas['product']->interest;
+                                    $expdays=$totaldays-$countdays;
+                                    if($countdays > $totaldays){
+                                        $exp="Exp";
+                                    } 
+                                ?>
+                                <dt>Start date : </dt>
+                                <dd>&nbsp;&nbsp;{{$datas['product']->start_date}}</dd>
+                                <dt>End date : </dt>
+                                <dd>&nbsp;&nbsp;{{$datas['product']->end_date}}</dd> 
+                                <dt>Total of days : </dt>
+                                <dd>&nbsp;&nbsp;Days left : {{$countdays.' \\ '.'days'}}</dd>
+                                <dd>&nbsp;&nbsp;Total : {{$totaldays.' \\ '.'days'}}</dd>
+                                <dd>&nbsp;&nbsp;Pays : ${{$totalprice}}</dd>
+                                <dd>&nbsp;&nbsp;Interest : ${{$datas['product']->interest}}</dd>
                             </dl>
                             <hr>
 
@@ -90,7 +111,6 @@
             </div>
 
         </div>
-    </div>
-
+    </div> 
 
 </div>
